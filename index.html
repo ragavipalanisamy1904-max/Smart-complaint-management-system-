@@ -1,0 +1,96 @@
+(<!DOCTYPE html>
+<html>
+<head>
+    <title>Smart Complaint Management System</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #0077cc;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .container {
+            width: 50%;
+            margin: 30px auto;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px gray;
+        }
+
+        h2 {
+            text-align: center;
+            color: #0077cc;
+        }
+
+        label {
+            font-weight: bold;
+        }
+
+        input, select, textarea {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            margin-bottom: 15px;
+            border: 1px solid gray;
+            border-radius: 5px;
+        }
+
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: #0077cc;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #005fa3;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Smart Complaint Management System</h1>
+</header>
+
+<div class="container">
+    <h2>Submit Complaint</h2>
+
+    <form>
+        <label>Full Name</label>
+        <input type="text" placeholder="Enter your name" required>
+
+        <label>Email</label>
+        <input type="email" placeholder="Enter your email" required>
+
+        <label>Complaint Type</label>
+        <select required>
+            <option value="">Select Complaint Type</option>
+            <option>Water Issue</option>
+            <option>Electricity Issue</option>
+            <option>Road Damage</option>
+            <option>Garbage Issue</option>
+            <option>Other</option>
+        </select>
+
+        <label>Complaint Description</label>
+        <textarea rows="5" placeholder="Describe your complaint"></textarea>
+
+        <button type="submit">Submit Complaint</button>
+    </form>
+</div>
+
+</body>
+</html>
