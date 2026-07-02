@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Admin - View Complaints</title>
+
+    <style>
+        body{
+            font-family: Arial, sans-serif;
+            background:#f4f4f4;
+            margin:0;
+            padding:20px;
+        }
+
+        h1{
+            text-align:center;
+            color:#0077cc;
+        }
+
+        table{
+            width:100%;
+            border-collapse:collapse;
+            background:white;
+            margin-top:20px;
+        }
+
+        th,td{
+            border:1px solid #ddd;
+            padding:10px;
+            text-align:center;
+        }
+
+        th{
+            background:#0077cc;
+            color:white;
+        }
+
+        button{
+            background:red;
+            color:white;
+            border:none;
+            padding:8px 12px;
+            cursor:pointer;
+            border-radius:5px;
+        }
+
+        button:hover{
+            background:darkred;
+        }
+    </style>
+</head>
+
+<body>
+
+<h1>Admin - View Complaints</h1>
+
+<table id="complaintTable">
+<tr>
+<th>Name</th>
+<th>Email</th>
+<th>Complaint Type</th>
+<th>Description</th>
+<th>Action</th>
+</tr>
+</table>
+
+<script>
+
+let complaints = JSON.parse(localStorage.getItem("complaints")) || [];
+
+let table = document.getElementById("complaintTable");
+
+complaints.forEach(function(c,index){
+
+let row = table.insertRow();
+
+row.insertCell(0).innerHTML = c.name;
+row.insertCell(1).innerHTML = c.email;
+row.insertCell(2).innerHTML = c.type;
+row.insertCell(3).innerHTML = c.description;
+
+let action = row.insertCell(4);
+
+action.innerHTML =
+'<button onclick="deleteComplaint('+index+')">Delete</button>';
+
+});
+
+function deleteComplaint(index){
+
+complaints.splice(index,1);
+
+localStorage.setItem("complaints",JSON.stringify(complaints));
+
+location.reload();
+
+}
+
+</script>
+
+</body>
+</html>
